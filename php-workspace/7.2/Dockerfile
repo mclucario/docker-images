@@ -1,4 +1,4 @@
-FROM php:7.2.4
+FROM php:7.2.4-cli
 MAINTAINER leon.gruenewald@kreativrudel.de
 
 RUN set -ex; \
@@ -16,5 +16,5 @@ chmod +x /opt/nvm/nvm.sh; \
 /opt/nvm/nvm.sh;
 
 COPY ./initws.sh /root/initws.sh
-CMD ["chmod", "+x", "/root/initws.sh"]
-CMD ["bash", "/root/initws.sh"]
+RUN ["chmod", "+x", "/root/initws.sh"]
+ENTRYPOINT [ "/root/initws.sh" ]
