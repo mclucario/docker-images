@@ -15,6 +15,6 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 chmod +x /opt/nvm/nvm.sh; \
 /opt/nvm/nvm.sh;
 
-COPY ./php-workspace/initws.sh /root/initws.sh
-RUN ["chmod", "+x", "/root/initws.sh"]
-ENTRYPOINT [ "/root/initws.sh" ]
+COPY ./php-workspace/initws.sh /tmp/initws.sh
+RUN ["chmod", "+x", "/tmp/initws.sh"]
+ENTRYPOINT [ "/tmp/initws.sh" ]
